@@ -1,17 +1,28 @@
+import { API_AUTH_KEY } from "../constants";
+
 export async function getKey(name) {
-    //call for api to generate a api key for the user
-    const response = await fetch('https://v2.api.noroff.dev/auth/create-api-key', {
+    try {
+      const response = await fetch(API_AUTH_KEY, {
         method: 'POST',
-        body: JSON.stringify({ name }),
         headers: {
-            'Content-Type': 'application/json',
-        }
-    });
-
-    if (!response.ok) {
-        throw new Error('failed to create api key');
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name  
+        })
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Error fetching API key: ${response.statusText}`);
+      }
+  
+      const data = await response.json();
+      const apiKey = data.data.key;  // get the key from the response
+  
+      console.log("Your API Key:", apiKey);
+  
+      return apiKey;
+    } catch (error) {
+      console.error('Error:', error);
     }
-
-    const data = await response.json();
-    return data.apiKey;
-}
+  }
