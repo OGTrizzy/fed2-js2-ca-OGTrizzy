@@ -22,6 +22,6 @@ export async function onLogin(event) {
 
     } catch (error) {
         console.error('Login error:', error);
-        alert('Login failed');
+        alert('ui Login failed');
     }
 }

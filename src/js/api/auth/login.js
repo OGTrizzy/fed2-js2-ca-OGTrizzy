@@ -9,7 +9,7 @@ export async function login({ email, password }) {
       });
 
       if (!response.ok){
-        throw new Error('login failed');
+        throw new Error('api login failed');
       }
 
       const data = await response.json();
