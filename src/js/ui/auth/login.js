@@ -13,12 +13,14 @@ export async function onLogin(event) {
 
     try {
         const data = await login({ email, password }); 
-        const accessToken = data.accessToken;
+        const accessToken = data.data.accessToken;
+        const name = data.data.name;
 
         localStorage.setItem('accessToken', accessToken);
+        localStorage.setItem('name', name);
 
         alert('Logged in successfully!');
-        window.location.href = '/index.html';
+        window.location.href = '/';
 
     } catch (error) {
         console.error('Login error:', error);

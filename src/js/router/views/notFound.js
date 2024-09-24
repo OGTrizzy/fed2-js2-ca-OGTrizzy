@@ -1,1 +1,1 @@
-alert("Page cannot be found in /src/views test");
+alert("Page cannot be found in /src/views");

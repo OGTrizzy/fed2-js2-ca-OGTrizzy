@@ -1,8 +1,4 @@
-export async function register({
-name,
-email,
-password
-}) {
+export async function register({ name, email, password }) {
     const url = 'https://v2.api.noroff.dev/auth/register';
     const body = {
         name: name,
@@ -22,5 +18,5 @@ password
   }
 
   const data = await response.json();
-  console.log(data)
+  return data;
 }
