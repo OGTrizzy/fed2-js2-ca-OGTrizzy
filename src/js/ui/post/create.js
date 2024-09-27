@@ -18,7 +18,7 @@ export async function onCreatePost(event) {
     };
 
     try {
-        const newPost = await createPost ({ title, body, tags, media });
+        const newPost = createPost ({ title, body, tags, media });
         alert('post created successfully!');
         window.location.href =  `/posts/${newPost.id}`;
     } catch (error) {

@@ -3,6 +3,6 @@ import { authGuard } from "../../utilities/authGuard";
 
 authGuard();
 
-const form = document.forms.createPost;
+const form = document.forms['create-post'];
 
 form.addEventListener("submit", onCreatePost);
