@@ -4,3 +4,39 @@
 body {
     background-color: bisque;
 }
+
+#posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.post {
+    width: calc(25% - 20px);
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.post img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+    .post {
+        width: calc(33.33% - 20px); /* 3 posts per row */
+    }
+}
+
+@media (max-width: 800px) {
+    .post {
+        width: calc(50% - 20px); /* 2 posts per row */
+    }
+}
+
+@media (max-width: 500px) {
+    .post {
+        width: 100%; /* 1 post per row */
+    }
+}

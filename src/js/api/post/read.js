@@ -1,8 +1,18 @@
+import { API_SOCIAL_POSTS } from "../constants";
+import { headers } from "../headers";
+const token = localStorage.getItem('accessToken');
+
 export async function readPost(id) {
-    const url = `https://v2.api.noroff.dev/posts/${id}`;
+    const url = `${API_SOCIAL_POSTS}/${id}`;
 
     try {
-        const response = await fetch(url);
+        const fetchHeaders = headers(); 
+        fetchHeaders.append("Authorization", `Bearer ${token}`); 
+
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: fetchHeaders
+        });
         if (!response.ok){
             throw new Error('failed to get post');
         }
@@ -13,36 +23,49 @@ export async function readPost(id) {
     }
 }
 
-
 export async function readPosts(limit = 12, page = 1, tag) {
-    let url = `https://v2.api.noroff.dev/posts?limit=${limit}&page=${page}`;
+    let url = `${API_SOCIAL_POSTS}?limit=${limit}&page=${page}`;
     if (tag) {
         url += `&tag=${tag}`;
     }
 
     try {
-        const response = await fetch(url);
-        if (!response.ok){
-            const errorMessage = `Failed to fetch posts: ${response.status} - ${response.statusText}`;
+        const fetchHeaders = headers(); 
+        fetchHeaders.append("Authorization", `Bearer ${token}`); 
+
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: fetchHeaders
+        });
+        const responseText = await response.text();
+
+        if (!response.ok) {
+            const errorMessage = `failed to fetch posts: ${response.status} - ${response.statusText}`;
             throw new Error(errorMessage);
         }
-
-        const posts = await response.json();
+        const posts = JSON.parse(responseText);
+        posts.data.sort((a, b) => new Date(b.updated) - new Date(a.updated)); //this is supposed to sort the content from api from new to old
         return posts;
     } catch (error) {
-        console.error('error:',error);
+        console.error('error:', error);
         throw error;
     }
 }
 
 export async function readPostsByUser(username, limit = 12, page = 1, tag) {
-    let url = `https://v2.api.noroff.dev/posts?author=${username}&limit=${limit}&page=${page}`;
+    let url = `https://v2.api.noroff.dev/posts/social?author=${username}&limit=${limit}&page=${page}`;
     if (tag) {
         url += `&tag=${tag}`;
     }
 
     try {
-        const response = await fetch(url);
+        const fetchHeaders = headers(); 
+        fetchHeaders.append("Authorization", `Bearer ${token}`); 
+
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: fetchHeaders
+        });
         if (!response.ok) {
             throw new Error('failed to get post from user');
         }
