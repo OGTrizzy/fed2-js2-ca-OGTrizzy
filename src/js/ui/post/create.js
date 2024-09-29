@@ -23,6 +23,7 @@ export async function onCreatePost(event) {
     try {
         const newPost = createPost(postData);
         alert('Post created successfully!');
+        window.location.href = '/'; 
         return newPost;
     } catch (error) {
         console.error('Error creating new post:', error);

@@ -17,7 +17,6 @@ export async function displayPostOnHome() {
 
     try {
         const response = await readPosts();
-        console.log('Fetched Posts:', response);
         const posts = response.data;
         
         if (Array.isArray(posts)) {
