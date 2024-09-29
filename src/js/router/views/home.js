@@ -32,7 +32,6 @@ async function displayPostOnHome() {
                     <p>${post.body}</p>
                     ${post.media ? `<img src="${post.media.url}" alt="${post.media.alt}">` : ''}
                     ${post.tags && post.tags.length > 0 ? `<p>Tags: ${post.tags.join(', ')}</p>` : ''}
-                    <small>By: ${post.author ? post.author.name : 'Unknown Author'}</small>
                 `;
                 postsContainer.appendChild(postElement);
             });            
