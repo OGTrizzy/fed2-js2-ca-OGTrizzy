@@ -23,6 +23,35 @@ body {
     object-fit: cover;
 }
 
+#post-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+
+#post-body {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    margin: 10px 0;
+}
+
+#post-image {
+    width: 300px;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px; 
+}
+
+#post-tags {
+    font-size: 14px;
+    color: #777;
+    margin-top: 10px;
+}
+
+
 @media (max-width: 1200px) {
     .post {
         width: calc(33.33% - 20px); /* 3 posts per row */

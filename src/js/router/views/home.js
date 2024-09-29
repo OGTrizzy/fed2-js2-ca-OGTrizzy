@@ -7,7 +7,7 @@ authGuard();
 const logoutButton = document.getElementById("logoutButton");
 logoutButton.addEventListener("click", onLogout);
 
-async function displayPostOnHome() {
+export async function displayPostOnHome() {
     const postsContainer = document.getElementById("posts-container");
 
     if (!postsContainer) {
@@ -27,14 +27,18 @@ async function displayPostOnHome() {
                 const postElement = document.createElement("div");
                 postElement.className = "post";
                 postElement.innerHTML = `
-                    <a href="/post/index.html?id=${post.id}" class="post-link">
                     <h2>${post.title}</h2>
                     <p>${post.body}</p>
                     ${post.media ? `<img src="${post.media.url}" alt="${post.media.alt}">` : ''}
                     ${post.tags && post.tags.length > 0 ? `<p>Tags: ${post.tags.join(', ')}</p>` : ''}
                 `;
+                
+                postElement.addEventListener('click', () => {
+                    window.location.href = `/post/?id=${post.id}`;
+                });
+            
                 postsContainer.appendChild(postElement);
-            });            
+            });      
         } else {
             console.error('Posts is not an array:', posts);
         }
