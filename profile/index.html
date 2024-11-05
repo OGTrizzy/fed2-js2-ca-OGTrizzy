@@ -6,17 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
+    <link rel="stylesheet" href="/src/css/style.css">
   </head>
-  <body>
-    <h1>Profile</h1>
+  <body class="bg-secondary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="/public/images/noroff-logo.png" class="img-fluid" alt="Noroff Logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/profile/">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/auth/login/">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/auth/register/">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="logoutButton" href="/">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/post/create/">Create New Post</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <div>name</div>
-    <div>profile image</div>
-    <div>test</div>
+    <div class="container"><br>
+      <div class="row">
 
-    <form name="updateProfile">
-      <button>Update Profile</button>
-    </form>
-    <a href="/">home</a>
+        <div class="col-md-6 col-lg-4"></div>
+
+        <div class="col-md-6 col-lg-4">
+          <h1>Profile</h1>
+          <form name="create-post" id="create-post-form">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+            <input type="text" id="post-title" name="post-title" class="form-control" 
+            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Emotion</span>
+            <input type="text" id="post-tags" name="post-tags" placeholder="Happy" 
+            class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Media URL</span>
+            <input type="text" class="form-control" id="post-media-url" name="post-media-url"
+            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          </div>
+
+          <div class="input-group">
+            <span for="post-body" class="input-group-text">Bio</span>
+            <textarea id="post-body" name="post-body" required class="form-control" aria-label="With textarea"></textarea>
+          </div>
+
+          </form>
+        </br>
+          <button class="btn btn-primary" type="submit">Update Profile</button>
+        </div>
   </body>
 </html>
