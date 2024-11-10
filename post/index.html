@@ -6,24 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
+    <link rel="stylesheet" href="/src/css/style.css">
   </head>
-  <body>
-    <h1>Post Page</h1>
-    <a href="/">Home</a>
-    <div id="post-container">
-      <h1 id="post-title"></h1>
-      <img id="post-image" alt="">
-      <p id="post-body"></p>
-      <p id="post-author"></p>
-      <p id="post-tags"></p>
-  </div>
-
-  <div id="posts-container">
-    <h2 id="post-title"></h2>
-    <p id="post-body"></p>
-    <img id="post-image" alt="Post media" style="display: none;">
-    <div id="post-tags"></div>
-</div>
-<div id="edit-post" style="cursor: pointer;">Edit</div>
+  <body class="bg-secondary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/fed2-js2-ca-OGTrizzy/">
+          <img src="/public/images/noroff-logo.png" class="img-fluid" alt="Noroff Logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/fed2-js2-ca-OGTrizzy/profile/">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/fed2-js2-ca-OGTrizzy/auth/login/">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/fed2-js2-ca-OGTrizzy/auth/register/">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="logoutButton" href="/fed2-js2-ca-OGTrizzy/">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/fed2-js2-ca-OGTrizzy/post/create/">Create New Post</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="container mt-4" style="max-width: fit-content;">
+      
+      <div class="card">
+        <img id="post-image" class="card-img-top img-fluid" style="max-height: 500px;" alt="Post media">
+        <div class="card-body">
+          <h1 id="post-title" class="card-title"></h1>
+          <p id="post-body" class="card-text"></p>
+          <p id="post-author" class="card-text"><small class="text-muted"></small></p>
+          <div id="post-tags" class="card-text"></div>
+        </div>
+      </div><br>
+      
+      <button id="edit-post" class="btn btn-primary w-100 mb-2">Edit</button>
+    </div>
   </body>
 </html>

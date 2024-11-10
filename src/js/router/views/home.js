@@ -17,23 +17,35 @@ export async function displayPostOnHome() {
 
     try {
         const response = await readPosts();
-        const posts = response.data;
-        
+        const posts = response.data.slice(0, 12);  // get the first 12 posts
+
         if (Array.isArray(posts)) {
             postsContainer.innerHTML = ""; // Clear old content if any
             
             posts.forEach(post => {
                 const postElement = document.createElement("div");
-                postElement.className = "post";
+                postElement.className = "post-post";
                 postElement.innerHTML = `
-                    <h2>${post.title}</h2>
-                    <p>${post.body}</p>
-                    ${post.media ? `<img src="${post.media.url}" alt="${post.media.alt}">` : ''}
-                    ${post.tags && post.tags.length > 0 ? `<p>Tags: ${post.tags.join(', ')}</p>` : ''}
+                <div class="card h-100" style="cursor: pointer;">
+                        ${
+                        post.media
+                            ? `<img src="${post.media.url}" class="card-img-top" alt="${post.media.alt}">`
+                            : ""
+                        }
+                    <div class="card-body d-flex flex-column"> <!-- Column layout for spacing -->
+                        <h2 class="card-title">${post.title}</h2>
+                        <p class="card-text">${post.body}</p>
+                        ${
+                            post.tags && post.tags.length > 0
+                                ? `<p class="card-text mt-auto"><small class="text-muted">Tags: ${post.tags.join(", ")}</small></p>`
+                                : ""
+                        }
+                    </div>
+                </div>
                 `;
                 
                 postElement.addEventListener('click', () => {
-                    window.location.href = `/post/?id=${post.id}`;
+                    window.location.href = `/fed2-js2-ca-OGTrizzy/post/?id=${post.id}`;
                 });
             
                 postsContainer.appendChild(postElement);

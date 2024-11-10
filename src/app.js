@@ -1,7 +1,8 @@
-import "../src/css/style.css";
 import { onCreatePost } from "./js/ui/post/create.js";
 import { onLogin } from '../src/js/ui/auth/login.js';
 import router from "./js/router/index.js";
+import 'bootstrap';
+
 //import { getKey } from "./js/api/auth/key.js";
 
 window.addEventListener('load', () => {
