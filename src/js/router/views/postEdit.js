@@ -30,7 +30,7 @@ document.getElementById('delete-button').addEventListener('click', async () => {
     try {
         await onDeletePost(postId);
         alert('Post deleted successfully!');
-        window.location.href = '/'; 
+        window.location.href = '/fed2-js2-ca-OGTrizzy/'; 
     } catch (error) {
         console.error('Error deleting post:', error);
         alert('Failed to delete post: ' + error.message);

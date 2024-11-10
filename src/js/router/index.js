@@ -1,4 +1,7 @@
 export default async function router(pathname = window.location.pathname) {
+  const base = "/fed2-js2-ca-OGTrizzy";
+  pathname = pathname.startsWith(base) ? pathname.slice(base.length) : pathname;
+
   switch (pathname) {
     case "/":
       await import("./views/home.js");

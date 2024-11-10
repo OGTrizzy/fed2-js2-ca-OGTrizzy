@@ -25,7 +25,7 @@ async function fetchPost() {
             }
 
             document.getElementById('edit-post').addEventListener('click', () => {
-                window.location.href = `/post/edit/?id=${post.id}`;
+                window.location.href = `/fed2-js2-ca-OGTrizzy/post/edit/?id=${post.id}`;
             });
 
         } else {

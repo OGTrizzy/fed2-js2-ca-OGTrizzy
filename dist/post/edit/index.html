@@ -5,15 +5,70 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
-    <script type="module" crossorigin src="/assets/app-CHDyutEg.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/style-DRjw14tJ.css">
+    <script type="module" crossorigin src="/fed2-js2-ca-OGTrizzy/assets/style-BWM6gi-O.js"></script>
+    <link rel="stylesheet" crossorigin href="/fed2-js2-ca-OGTrizzy/assets/style-CamFq3NE.css">
   </head>
 
-  <body>
-    <h1>Edit Post</h1>
+  <body class="bg-secondary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/fed2-js2-ca-OGTrizzy/">
+          <img src="/fed2-js2-ca-OGTrizzy/assets/noroff-logo-cWZQt9D6.png" class="img-fluid" alt="Noroff Logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/fed2-js2-ca-OGTrizzy/profile/">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/fed2-js2-ca-OGTrizzy/auth/login/">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/fed2-js2-ca-OGTrizzy/auth/register/">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="logoutButton" href="/fed2-js2-ca-OGTrizzy/">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/fed2-js2-ca-OGTrizzy/post/create/">Create New Post</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <form name="editPost">
-      <button>Edit Post</button>
-    </form>
-  </body>
+    <div class="container vh-100 d-flex justify-content-center align-items-start mt-5">
+      <div class="col-12 col-md-8 col-lg-6">
+        <h1>Edit Post</h1>
+        <form name="editPost" id="edit-post-form">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+            <input type="text" id="post-title" placeholder="Post Title" class="form-control" required>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Tags</span>
+            <input type="text" id="post-tags" placeholder="Comma-separated tags" class="form-control">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Media URL</span>
+            <input type="text" id="post-media-url" name="post-media-url" class="form-control">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Media ALT Text</span>
+            <input type="text" id="post-media-alt" name="post-media-alt" class="form-control">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Text</span>
+            <textarea id="post-body" placeholder="Post Body" class="form-control" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100 mb-2">Update Post</button>
+          <button id="delete-button" class="btn btn-danger w-100">Delete Post</button>
+        </form>
+      </div>
+  </div> 
+
+</body>
 </html>
