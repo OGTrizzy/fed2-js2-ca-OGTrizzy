@@ -45,7 +45,7 @@ export async function displayPostOnHome() {
                 `;
                 
                 postElement.addEventListener('click', () => {
-                    window.location.href = `/post/?id=${post.id}`;
+                    window.location.href = `/fed2-js2-ca-OGTrizzy/post/?id=${post.id}`;
                 });
             
                 postsContainer.appendChild(postElement);
