@@ -9,8 +9,37 @@
   <body>
     <h1>Create Post</h1>
 
-    <form name="createPost">
-      <button>Create Post</button>
+    <form name="create-post" id="create-post-form">
+      <div>
+        <label for="post-title">Title</label>
+        <input type="text" id="post-title" name="post-title" required>
+      </div>
+    
+      <div>
+        <label for="post-body">Body</label>
+        <textarea id="post-body" name="post-body" required></textarea>
+      </div>
+    
+      <div>
+        <label for="post-tags">Tags</label>
+        <input type="text" id="post-tags" name="post-tags" placeholder="Comma-separated tags">
+      </div>
+    
+      <div>
+        <label for="post-media-url">Media URL</label>
+        <input type="text" id="post-media-url" name="post-media-url">
+      </div>
+    
+      <div>
+        <label for="post-media-alt">Media ALT Text</label>
+        <input type="text" id="post-media-alt" name="post-media-alt">
+      </div>
+    
+      <button type="submit">Create Post</button>
     </form>
+    
+
+    <a href="/">Home</a>
+
   </body>
 </html>

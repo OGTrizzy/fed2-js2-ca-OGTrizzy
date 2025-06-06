@@ -1,1 +1,5 @@
-export function onLogout() {}
+export async function onLogout() {
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('name');
+    window.location.href = '/auth/login/';
+}
