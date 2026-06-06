@@ -10,9 +10,13 @@
 
   <body>
     <h1>Edit Post</h1>
-
-    <form name="editPost">
-      <button>Edit Post</button>
+    <form name="editPost" id="edit-post-form">
+        <input type="text" id="post-title" placeholder="Post Title" required>
+        <textarea id="post-body" placeholder="Post Body" required></textarea>
+        <input type="text" id="post-tags" placeholder="Tags (comma separated)">
+        <button type="submit">Update Post</button>
+        <button id="delete-button">Delete Post</button>
     </form>
-  </body>
+    <a href="/">Home</a>
+</body>
 </html>
