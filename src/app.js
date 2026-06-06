@@ -1,4 +1,4 @@
-import "../css/style.css";
+import "./css/style.css";
 import { onCreatePost } from "./js/ui/post/create.js";
 import { onLogin } from './js/ui/auth/login.js';
 import router from "./js/router/index.js";
